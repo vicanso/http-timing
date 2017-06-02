@@ -20,7 +20,7 @@ The HTTPTiming constructor
   - `options.size` The cache size, default is 10
 
 ```js
-const HTTPTiming = require('http-timing);
+const HTTPTiming = require('http-timing');
 const httpTiming = new HTTPTiming({
   max: 5 * 1000,
   size: 5,
@@ -39,7 +39,7 @@ Add the data to timing view
   - `data.serverTiming` The http server timing
 
 ```js
-const HTTPTiming = require('http-timing);
+const HTTPTiming = require('http-timing');
 const httpTiming = new HTTPTiming();
 httpTiming.add({
   method: 'GET',
@@ -55,7 +55,7 @@ httpTiming.add({
 Get the cache length
 
 ```js
-const HTTPTiming = require('http-timing);
+const HTTPTiming = require('http-timing');
 const httpTiming = new HTTPTiming();
 // 0
 console.info(httpTiming.length);
@@ -66,7 +66,7 @@ console.info(httpTiming.length);
 Remove all cache
 
 ```js
-const HTTPTiming = require('http-timing);
+const HTTPTiming = require('http-timing');
 const httpTiming = new HTTPTiming();
 httpTiming.add({
   method: 'GET',
@@ -87,7 +87,7 @@ console.info(httpTiming.length)
 Get the html of http timing
 
 ```js
-const HTTPTiming = require('http-timing);
+const HTTPTiming = require('http-timing');
 const httpTiming = new HTTPTiming();
 httpTiming.add({
   method: 'GET',
