@@ -1,0 +1,160 @@
+
+      <!DOCTYPE html>
+      <html lang="zh-CN">
+        <head>
+          <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+          <meta http-equiv="X-UA-Compatible" content="IE=edge">
+          <meta name="HandheldFriendly" content="True">
+          <meta name="viewport" content="width=device-width, initial-scale=1">
+          <meta http-equiv="cleartype" content="on">
+        </head>
+        <body style="margin:0">
+          <div>
+      <div style="
+        font-size: 14px;
+        margin-bottom: 5px;
+      ">
+        <h5 style="
+          margin:0;padding:0;
+          line-height:24px;
+          text-indent:5px;
+          background-color: #35405b;
+          color: #fff;
+        ">
+          GET
+          <span style="margin: 0 5px 0 0">/users/me</span>
+          <span style="color:#4caf50;margin:0 5px 0 0">200</span>
+          2800ms
+        </h5>
+        
+  <table style="border-collapse:collapse;border-spacing:0;width:100%">
+    <tbody>
+      <tr>
+      <td style="padding:0 0 0 5px;width:150px">/users/me</td>
+      <td style="padding:3px 0">
+        <div style="float:right;width:85%;background-color:#da3805">&nbsp;</div>
+      </td>
+      <td style="padding:0 5px 0 0;width:80px;text-align:right;">2.52s</td>
+    </tr><tr>
+      <td style="padding:0 0 0 5px;width:150px">getUser</td>
+      <td style="padding:3px 0">
+        <div style="float:right;width:4%;background-color:#4caf50">&nbsp;</div>
+      </td>
+      <td style="padding:0 5px 0 0;width:80px;text-align:right;">102.02ms</td>
+    </tr><tr>
+      <td style="padding:0 0 0 5px;width:150px">mongodb:get</td>
+      <td style="padding:3px 0">
+        <div style="float:right;width:2%;background-color:#4caf50">&nbsp;</div>
+      </td>
+      <td style="padding:0 5px 0 0;width:80px;text-align:right;">33.47ms</td>
+    </tr><tr>
+      <td style="padding:0 0 0 5px;width:150px">validate:user</td>
+      <td style="padding:3px 0">
+        <div style="float:right;width:2%;background-color:#4caf50">&nbsp;</div>
+      </td>
+      <td style="padding:0 5px 0 0;width:80px;text-align:right;">54.06ms</td>
+    </tr>
+    </tbody>
+  </table>
+  
+      </div><div style="
+        font-size: 14px;
+        margin-bottom: 5px;
+      ">
+        <h5 style="
+          margin:0;padding:0;
+          line-height:24px;
+          text-indent:5px;
+          background-color: #35405b;
+          color: #fff;
+        ">
+          GET
+          <span style="margin: 0 5px 0 0">/users/count</span>
+          <span style="color:#da3805;margin:0 5px 0 0">500</span>
+          2300ms
+        </h5>
+        
+  <table style="border-collapse:collapse;border-spacing:0;width:100%">
+    <tbody>
+      <tr>
+      <td style="padding:0 0 0 5px;width:150px">/users/count</td>
+      <td style="padding:3px 0">
+        <div style="float:right;width:61%;background-color:#daa507">&nbsp;</div>
+      </td>
+      <td style="padding:0 5px 0 0;width:80px;text-align:right;">1.80s</td>
+    </tr><tr>
+      <td style="padding:0 0 0 5px;width:150px">mongodb:count</td>
+      <td style="padding:3px 0">
+        <div style="float:right;width:1%;background-color:#4caf50">&nbsp;</div>
+      </td>
+      <td style="padding:0 5px 0 0;width:80px;text-align:right;">1.02ms</td>
+    </tr>
+    </tbody>
+  </table>
+  
+      </div><div style="
+        font-size: 14px;
+        margin-bottom: 5px;
+      ">
+        <h5 style="
+          margin:0;padding:0;
+          line-height:24px;
+          text-indent:5px;
+          background-color: #35405b;
+          color: #fff;
+        ">
+          GET
+          <span style="margin: 0 5px 0 0">/users/me/token</span>
+          <span style="color:#da3805;margin:0 5px 0 0">404</span>
+          1400ms
+        </h5>
+        
+  <table style="border-collapse:collapse;border-spacing:0;width:100%">
+    <tbody>
+      <tr>
+      <td style="padding:0 0 0 5px;width:150px">/users/me/token</td>
+      <td style="padding:3px 0">
+        <div style="float:right;width:34%;background-color:#cddc39">&nbsp;</div>
+      </td>
+      <td style="padding:0 5px 0 0;width:80px;text-align:right;">1.00s</td>
+    </tr><tr>
+      <td style="padding:0 0 0 5px;width:150px">mongodb:getUser</td>
+      <td style="padding:3px 0">
+        <div style="float:right;width:1%;background-color:#4caf50">&nbsp;</div>
+      </td>
+      <td style="padding:0 5px 0 0;width:80px;text-align:right;">10.02ms</td>
+    </tr><tr>
+      <td style="padding:0 0 0 5px;width:150px">getToken</td>
+      <td style="padding:3px 0">
+        <div style="float:right;width:1%;background-color:#4caf50">&nbsp;</div>
+      </td>
+      <td style="padding:0 5px 0 0;width:80px;text-align:right;">1.02ms</td>
+    </tr>
+    </tbody>
+  </table>
+  
+      </div><div style="
+        font-size: 14px;
+        margin-bottom: 0px;
+      ">
+        <h5 style="
+          margin:0;padding:0;
+          line-height:24px;
+          text-indent:5px;
+          background-color: #35405b;
+          color: #fff;
+        ">
+          POST
+          <span style="margin: 0 5px 0 0">/users/login</span>
+          <span style="margin-right:5px">pending</span>
+          
+        </h5>
+        <div style="
+      text-align:center;
+      margin: 5px 0;
+      ">Loading...</div>
+      </div>
+    </div>
+        </body>
+      </html>
+    
