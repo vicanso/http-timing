@@ -39,6 +39,15 @@ describe('HTTPTiming', () => {
   it('add', () => {
     list.forEach(item => httpTiming.add(item));
     assert.equal(httpTiming.length, list.length);
+    const set = httpTiming.add({
+      method: 'PUT',
+      url: '/users/like/1232',
+    });
+    let item = httpTiming.get(httpTiming.length - 1);
+    assert(!item.use);
+    set('use', 1000);
+    item = httpTiming.get(httpTiming.length - 1);
+    assert(!!item.use);
   });
 
   it('empty', () => {

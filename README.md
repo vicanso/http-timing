@@ -29,7 +29,7 @@ const httpTiming = new HTTPTiming({
 
 ### add
 
-Add the data to timing view
+Add the data to timing view, return function to change the value of data
 
 - `data` The setting of http timing
   - `data.url` The http request url
@@ -37,6 +37,27 @@ Add the data to timing view
   - `data.status` The http response status
   - `data.use` The http response time
   - `data.serverTiming` The http server timing
+
+
+
+```js
+const HTTPTiming = require('http-timing');
+const httpTiming = new HTTPTiming();
+const set = httpTiming.add({
+  method: 'GET',
+  url: '/users/me',
+  status: 200,
+  use: 3000,
+  serverTiming: 'A=2521.46147;"/users/me",B=102.022688;"getUser",C=33.468153;"mongodb:get",D=54.064163;"validate:user"',
+});
+set('use', 5000);
+```
+
+### get
+
+Get the timing by index
+
+- `index` the timing index
 
 ```js
 const HTTPTiming = require('http-timing');
@@ -48,6 +69,7 @@ httpTiming.add({
   use: 3000,
   serverTiming: 'A=2521.46147;"/users/me",B=102.022688;"getUser",C=33.468153;"mongodb:get",D=54.064163;"validate:user"',
 });
+console.info(httpTiming.get(0));
 ```
 
 ### length

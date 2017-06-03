@@ -89,6 +89,17 @@ class HTTPTiming {
     this.list = [];
   }
   /**
+   * Get the timing by index
+   * @param {Number} index The timing index
+   */
+  get(index) {
+    const item = this.list[index];
+    if (!item) {
+      return null;
+    }
+    return Object.assign({}, item);
+  }
+  /**
    * Add the data to timing view
    * @param {Object} data {
    *  url: String,
@@ -105,11 +116,14 @@ class HTTPTiming {
     const {
       size,
     } = this.options;
-    this.list.push(data);
+    const item = Object.assign({}, data);
+    this.list.push(item);
     if (this.list.length > size) {
       this.list.shift();
     }
-    return this;
+    return (key, value) => {
+      item[key] = value;
+    };
   }
   /**
    * the length of cache
