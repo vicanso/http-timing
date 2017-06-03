@@ -18,6 +18,7 @@ function getServerTimingTable(serverTiming, max) {
   const html = items.map((item) => {
     const reg = /(\S+?)=(\d+.\d*);"([\S\s]+)"/;
     const result = reg.exec(item);
+    /* istanbul ignore if */
     if (result.length < 2) {
       throw new Error('Server timing is invalid');
     }
@@ -94,6 +95,7 @@ class HTTPTiming {
    */
   get(index) {
     const item = this.list[index];
+    /* istanbul ignore if */
     if (!item) {
       return null;
     }
@@ -110,6 +112,7 @@ class HTTPTiming {
    * }
    */
   add(data) {
+    /* istanbul ignore if */
     if (!data || !data.url) {
       throw new Error('the url can\'t be null');
     }
@@ -118,6 +121,7 @@ class HTTPTiming {
     } = this.options;
     const item = Object.assign({}, data);
     this.list.push(item);
+    /* istanbul ignore if */
     if (this.list.length > size) {
       this.list.shift();
     }
