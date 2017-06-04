@@ -51,6 +51,9 @@ const set = httpTiming.add({
   serverTiming: 'A=2521.46147;"/users/me",B=102.022688;"getUser",C=33.468153;"mongodb:get",D=54.064163;"validate:user"',
 });
 set('use', 5000);
+set({
+  use: 5000,
+});
 ```
 
 ### get

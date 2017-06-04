@@ -75,6 +75,11 @@ function getUse(use) {
   return `${use}ms`;
 }
 
+function isObject(value) {
+  const type = typeof value;
+  return value != null && (type === 'object');
+}
+
 class HTTPTiming {
   /**
    * The HTTPTiming constructor
@@ -126,7 +131,11 @@ class HTTPTiming {
       this.list.shift();
     }
     return (key, value) => {
-      item[key] = value;
+      if (isObject(key)) {
+        Object.assign(item, key);
+      } else {
+        item[key] = value;
+      }
     };
   }
   /**

@@ -47,7 +47,12 @@ describe('HTTPTiming', () => {
     assert(!item.use);
     set('use', 1000);
     item = httpTiming.get(httpTiming.length - 1);
-    assert(!!item.use);
+    assert.equal(item.use, 1000);
+    set({
+      use: 2000,
+    });
+    item = httpTiming.get(httpTiming.length - 1);
+    assert.equal(item.use, 2000);
   });
 
   it('empty', () => {
