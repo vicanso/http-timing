@@ -19,7 +19,7 @@ function getServerTimingTable(serverTiming, max) {
     const reg = /(\S+?)=(\d+.\d*);"([\S\s]+)"/;
     const result = reg.exec(item);
     /* istanbul ignore if */
-    if (result.length < 2) {
+    if (!result || result.length < 2) {
       throw new Error('Server timing is invalid');
     }
     const name = result[3] || result[1];
