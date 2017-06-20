@@ -29,6 +29,9 @@ describe('HTTPTiming', () => {
       status: 404,
       use: 1400,
       serverTiming: 'A=1000.46147;"/users/me/token",B=10.022688;"mongodb:getUser",C=1.022688;"getToken"',
+      extra: {
+        message: 'Error message',
+      },
     },
     {
       method: 'POST',

@@ -50,6 +50,39 @@ function getServerTimingTable(serverTiming, max) {
 }
 
 /**
+ * Get the extra table view
+ *
+ * @param {Object} extra The extra fields
+ * @returns {String} The html of table view
+ */
+function getExtraTable(extra) {
+  if (!extra) {
+    return '';
+  }
+  const keys = Object.keys(extra);
+  if (keys.length === 0) {
+    return '';
+  }
+  const html = keys.map((key) => {
+    const value = JSON.stringify(extra[key]);
+    return `<tr>
+      <td style="padding:0 0 0 5px;">${key}</td>
+      <td style="padding:3px 0">
+        ${value}
+      </td>
+    </tr>`;
+  }).join('');
+  return `
+  <div style="text-align:center;font-weight:900;margin-top:5px">--- Extra ---</div>
+  <table style="border-collapse:collapse;border-spacing:0;width:100%">
+    <tbody>
+      ${html}
+    </tbody>
+  </table>
+  `;
+}
+
+/**
  * Get the status html
  * @param {Number} status The http response status
  */
@@ -183,6 +216,7 @@ class HTTPTiming {
           ${getUse(item.use)}
         </h5>
         ${getServerTimingTable(item.serverTiming, max)}
+        ${getExtraTable(item.extra)}
       </div>`;
       return html;
     });
