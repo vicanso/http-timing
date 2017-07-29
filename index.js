@@ -16,7 +16,7 @@ function getServerTimingTable(serverTiming, max) {
   }
   const items = serverTiming.split(',');
   const html = items.map((item) => {
-    const reg = /(\S+?)=(\d+.\d*);"([\S\s]+)"/;
+    const reg = /(\S+?)=(\d+.?\d*);"([\S\s]+)"/;
     const result = reg.exec(item);
     /* istanbul ignore if */
     if (!result || result.length < 2) {
