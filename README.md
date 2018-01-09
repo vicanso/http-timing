@@ -48,7 +48,7 @@ const set = httpTiming.add({
   url: '/users/me',
   status: 200,
   use: 3000,
-  serverTiming: 'A=2521.46147;"/users/me",B=102.022688;"getUser",C=33.468153;"mongodb:get",D=54.064163;"validate:user"',
+  serverTiming: 'A;dur=2521.46147;desc="/users/me",B;dur=102.022688;desc="getUser",C;dur=33.468153;desc="mongodb:get",D;dur=54.064163;desc="validate:user"',
 });
 set('use', 5000);
 set({
@@ -70,7 +70,7 @@ httpTiming.add({
   url: '/users/me',
   status: 200,
   use: 3000,
-  serverTiming: 'A=2521.46147;"/users/me",B=102.022688;"getUser",C=33.468153;"mongodb:get",D=54.064163;"validate:user"',
+  serverTiming: 'A;dur=2521.46147;desc="/users/me",B;dur=102.022688;desc"getUser",C;dur=33.468153;desc"mongodb:get",D;dur=54.064163;desc="validate:user"',
 });
 console.info(httpTiming.get(0));
 ```
@@ -98,7 +98,7 @@ httpTiming.add({
   url: '/users/me',
   status: 200,
   use: 3000,
-  serverTiming: 'A=2521.46147;"/users/me",B=102.022688;"getUser",C=33.468153;"mongodb:get",D=54.064163;"validate:user"',
+  serverTiming: 'A;dur=2521.46147;desc="/users/me",B;dur=102.022688;desc="getUser",C;dur=33.468153;desc="mongodb:get",D;dur=54.064163;desc="validate:user"',
 });
 // 1
 console.info(httpTiming.length)
@@ -119,7 +119,7 @@ httpTiming.add({
   url: '/users/me',
   status: 200,
   use: 3000,
-  serverTiming: 'A=2521.46147;"/users/me",B=102.022688;"getUser",C=33.468153;"mongodb:get",D=54.064163;"validate:user"',
+  serverTiming: 'A;dur=2521.46147;desc="/users/me",B;dur=102.022688;desc="getUser",C;dur=33.468153;desc="mongodb:get",D;dur=54.064163;desc="validate:user"',
 });
 const html = httpTiming.toHTML();
 console.info(html);
